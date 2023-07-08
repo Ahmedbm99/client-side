@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {Navbar} from './components/header';
 
 import { Presentation } from './pages/Presentation';
+import {UsersList } from './pages/UsersList';
 function App() {
   return (
     <div className="App">
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Presentation/>}/>
         
         <Route path="/ThemesDeRecherche"/>
-        <Route path="/Members"/>
+        <Route path="/Members" element={<UsersList/>} />
         <Route path="/Posts"/>
         <Route path ="/Events" />
         <Route path="/Project"/>

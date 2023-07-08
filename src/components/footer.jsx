@@ -11,7 +11,7 @@ import {
 import { FacebookLogo,LinkedinLogo   } from "phosphor-react";
 export const Footer =() => {
   return (
-    <MDBFooter className='text-center' color='white' bgColor='dark'>
+    <MDBFooter className='text-center' color='white' style={{ backgroundColor: 'rgb(60, 0, 119)' }}>
       <MDBContainer className='p-4'>
         
         <section className=''>
@@ -76,7 +76,7 @@ export const Footer =() => {
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2023 Copyright:
+        © 2023 Copyright
        
       </div>
     </MDBFooter>

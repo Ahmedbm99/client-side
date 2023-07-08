@@ -9,7 +9,7 @@ export const LoginCard = () => {
         <div textColor="#333" backgroundColor="#fffff">
         <div className="containerLogin">
           <form className="Auth-form">
-            <div className="Auth-form-content">
+            <div className="Auth-form-content" style={{width:'250px'}}>
               <h3 className="Auth-form-title" >Espace Membre</h3>
               <div className="form-group mt-3">
                 <label>Login</label>
