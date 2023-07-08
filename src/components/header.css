@@ -22,8 +22,19 @@
   }
   .containerLogin {
     margin-top: 100px;
-    align-items: center;
-    display: flex;
+   
+    display: inline-flex;
     margin-left: 5px;
-    font-size: 10px;
+  
+    
+  }
+ 
+  .Auth-form{
+    margin-right: 15px;
+    width: 100%;
+
+  }
+  .Auth-form-content{
+    width: auto;
+    margin-right: auto;
   }
