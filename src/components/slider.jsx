@@ -14,27 +14,27 @@ export const Slider = () => {
 
     return  <Carousel
     data={data}
-    time={2000}
+    time={4000}
     width="100%"
-    height="510px"
+    height="350px"
     
     radius="10px"
-    slideNumber={true}
+    slideNumber={false}
     slideNumberStyle={slideNumberStyle}
-    captionPosition="bottom"
+   
     automatic={true}
     dots={true}
     pauseIconColor="white"
     pauseIconSize="40px"
     slideBackgroundColor="darkgrey"
     slideImageFit="cover"
-    thumbnails={true}
+    thumbnails={false}
     thumbnailWidth="100px"
     style={{
       textAlign: "center",
       maxWidth: "100%",
       maxHeight: "100%",
-      margin: "40px auto",
+      margin: "1px ",
     }}
   />
 
