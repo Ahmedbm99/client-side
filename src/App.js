@@ -1,19 +1,20 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {Navbar} from './components/header';
-import {Slider} from './components/slider';
+
+import { Presentation } from './pages/Presentation';
 function App() {
   return (
     <div className="App">
      <Router>
       <Navbar/>
-      <Slider />
+      
       <Routes>
         
           
         
-        <Route path="/"/>
-        <Route path="/Presentation"/>
+        <Route path="/" element={<Presentation/>}/>
+        
         <Route path="/ThemesDeRecherche"/>
         <Route path="/Members"/>
         <Route path="/Posts"/>
