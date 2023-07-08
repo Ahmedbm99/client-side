@@ -1,8 +1,9 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
+
 //import {CDBSidebar} from 'cdbreact';
 import "./header.css";
-
+import { Link } from 'react-router-dom';
 
 export const LoginCard = () => {
     return (
@@ -34,9 +35,14 @@ export const LoginCard = () => {
                 </button>
               </div>
               <div className="d-grid gap-2 mt-3">
-                <button type="" className="btn btn-info">
+                <button type="submit"  className="btn btn-info">
+                <Link to="/Register" className="text-white text-decoration-none">
                   S'inscrire
+                  </Link>
                 </button>
+                <Link to="../pages/ForgetPassword" className="text-black text-decoration-none">
+                  Mot de passe oubliée?
+                </Link>
               </div>
              
             </div>

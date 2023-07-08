@@ -16,7 +16,7 @@ export const Slider = () => {
     data={data}
     time={4000}
     width="100%"
-    height="350px"
+    height="520px"
     
     radius="10px"
     slideNumber={false}
