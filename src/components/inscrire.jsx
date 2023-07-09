@@ -1,65 +1,61 @@
-import React, {useState,setState} from 'react';
+import React from 'react';
 import './style.css'
+import { useForm } from 'react-hook-form';
 export const RegistrationForm =() => {
     
-    const [firstName, setFirstName] = useState(null);
-    const [lastName, setLastName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [password,setPassword] = useState(null);
-    const [confirmPassword,setConfirmPassword] = useState(null);
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+      } = useForm();
 
-    const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        if(id === "firstName"){
-            setFirstName(value);
-        }
-        if(id === "lastName"){
-            setLastName(value);
-        }
-        if(id === "email"){
-            setEmail(value);
-        }
-        if(id === "password"){
-            setPassword(value);
-        }
-        if(id === "confirmPassword"){
-            setConfirmPassword(value);
-        }
+      const onSubmit = (data) => {
+        console.log(data);
+      };
 
-    }
 
-    const handleSubmit  = () => {
-        console.log(firstName,lastName,email,password,confirmPassword);
-    }
 
     return(
-        <div className="form">
-            <div className="form-body">
-                <div className="username">
-                    <label className="form__label" for="firstName">First Name </label>
-                    <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
-                </div>
-                <div className="lastname">
-                    <label className="form__label" for="lastName">Last Name </label>
-                    <input  type="text" name="" id="lastName" value={lastName}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
-                </div>
-                <div className="email">
-                    <label className="form__label" for="email">Email </label>
-                    <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
-                </div>
-                <div className="password">
-                    <label className="form__label" for="password">Password </label>
-                    <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
-                </div>
-                <div className="confirm-password">
-                    <label className="form__label" for="confirmPassword">Confirm Password </label>
-                    <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
-                </div>
-            </div>
-            <div class="footer">
-                <button onClick={()=>handleSubmit()} type="submit" class="btn">Register</button>
-            </div>
+        <div className="App">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-control">
+          <label>Email</label>
+          <input
+            type="text"
+            name="email"
+            {...register("email", {
+              required: "Email is required.",
+              pattern: {
+                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                message: "Email is not valid."
+              }
+            })}
+          />
+          {errors.email && <p className="errorMsg">{errors.email.message}</p>}
         </div>
+        <div className="form-control">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            {...register("password", {
+              required: "Password is required.",
+              minLength: {
+                value: 8,
+                message: "Password should be at-least 8 characters."
+              }
+            })}
+          />
+          {errors.password && (
+            <p className="errorMsg">{errors.password.message}</p>
+          )}
+        </div>
+        <div className="form-control">
+          <label></label>
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </div>
        
     )       
 };
