@@ -62,6 +62,6 @@ export const LoginCard = () => {
         </div>
     
         </div>
-        
+        console.log("ok");
       )
 };
